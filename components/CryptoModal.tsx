@@ -78,27 +78,27 @@ export default function CryptoModal({ crypto, onClose }: CryptoModalProps) {
             <span className="text-gray-400 text-lg">{crypto.symbol.toUpperCase()}</span>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <div className="bg-gray-800 p-4 rounded-lg">
             <p className="text-gray-400">Current Price</p>
             <p className="text-2xl font-bold text-green-400">
-              ${crypto.current_price.toLocaleString(undefined, { maximumFractionDigits: 8 })}
+              ${crypto.current_price?.toLocaleString(undefined, { maximumFractionDigits: 8 }) ?? "N/A"}
             </p>
           </div>
           <div className="bg-gray-800 p-4 rounded-lg">
             <p className="text-gray-400">Market Cap</p>
-            <p className="text-2xl font-bold text-blue-400">${crypto.market_cap.toLocaleString()}</p>
+            <p className="text-2xl font-bold text-blue-400">${crypto.market_cap?.toLocaleString() ?? "N/A"}</p>
           </div>
           <div className="bg-gray-800 p-4 rounded-lg">
             <p className="text-gray-400">24h High</p>
             <p className="text-xl font-semibold text-green-400">
-              ${crypto.high_24h.toLocaleString(undefined, { maximumFractionDigits: 8 })}
+              ${crypto.high_24h?.toLocaleString(undefined, { maximumFractionDigits: 8 }) ?? "N/A"}
             </p>
           </div>
           <div className="bg-gray-800 p-4 rounded-lg">
             <p className="text-gray-400">24h Low</p>
             <p className="text-xl font-semibold text-red-400">
-              ${crypto.low_24h.toLocaleString(undefined, { maximumFractionDigits: 8 })}
+              ${crypto.low_24h?.toLocaleString(undefined, { maximumFractionDigits: 8 }) ?? "N/A"}
             </p>
           </div>
         </div>

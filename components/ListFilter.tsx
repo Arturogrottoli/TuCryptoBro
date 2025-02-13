@@ -38,8 +38,8 @@ export default function ListFilter({ count, setCount, sortBy, onSortChange }: Li
           <option value="market_cap_asc">Market Cap (Low to High)</option>
           <option value="price_desc">Price (High to Low)</option>
           <option value="price_asc">Price (Low to High)</option>
-          <option value="price_change_24h_desc">24h Change (High to Low)</option>
-          <option value="price_change_24h_asc">24h Change (Low to High)</option>
+          <option value="name_desc">Name (Z-A)</option>
+          <option value="name_asc">Name (A-Z)</option>
         </select>
       </div>
     </div>

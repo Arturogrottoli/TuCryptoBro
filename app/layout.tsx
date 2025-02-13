@@ -1,10 +1,13 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from "next"
+import "./globals.css"
+import type React from "react"
+import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  title: 'Tu Crypto Bro',
-  description: 'Mirá el valor de tus cryptos en vivo!',
+  title: "Tu Crypto Bro",
+  description: "Mirá el valor de tus cryptos en vivo!",
   icons: "/favicon.ico",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -14,7 +17,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
+
+
+
+import './globals.css'

@@ -34,14 +34,14 @@ export default function CryptoItem({ crypto, onClick }: CryptoItemProps) {
         </div>
       </div>
       <div className="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
-        ${crypto.current_price.toLocaleString(undefined, { maximumFractionDigits: 8 })}
+        ${crypto.current_price?.toLocaleString(undefined, { maximumFractionDigits: 8 }) ?? "N/A"}
       </div>
       <div className="flex justify-between text-sm">
-        <span className="text-gray-400">Rank: {crypto.market_cap_rank}</span>
+        <span className="text-gray-400">Rank: {crypto.market_cap_rank ?? "N/A"}</span>
         <span
           className={`font-semibold ${crypto.price_change_percentage_24h >= 0 ? "text-green-400" : "text-red-400"}`}
         >
-          {crypto.price_change_percentage_24h.toFixed(2)}%
+          {crypto.price_change_percentage_24h?.toFixed(2)}%
         </span>
       </div>
     </div>
